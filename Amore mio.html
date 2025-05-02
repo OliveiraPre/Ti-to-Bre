@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pra Você 💖</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #c71585;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .slideshow {
+      width: 300px;
+      height: 400px;
+      position: relative;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #888;
+      background-color: #fff0f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slideshow img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    iframe {
+      border-radius: 12px;
+    }
+
+    button {
+      background-color: #c71585;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #a50d6a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Essa é só uma forma de dizer que eu te amo ❤️</h1>
+
+  <div class="container">
+    <!-- SLIDESHOW DE FOTOS -->
+    <div class="slideshow">
+      <img src="https://i.imgur.com/LOeuYpT.jpeg" class="active" />
+      <img src="https://i.imgur.com/BxZtZ2a.jpeg" />
+      <img src="https://i.imgur.com/3f2UgeF.jpeg" />
+      <img src="https://i.imgur.com/2Qwcubj.jpeg" />
+      <img src="https://i.imgur.com/UXb5IbQ.jpeg" />
+      <img src="https://i.imgur.com/zm2rETU.jpeg" />
+      <img src="https://i.imgur.com/LPugAGS.jpeg" />
+      <img src="https://i.imgur.com/UXb5IbQ.jpeg" />
+    </div>
+
+    <!-- MÚSICA DO YOUTUBE -->
+    <iframe width="300" height="170"
+      src="https://www.youtube.com/embed/HR4ZxjGQGYY?autoplay=1&start=69&mute=0"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+
+    <!-- BOTÃO DE MENSAGEM -->
+    <button onclick="window.open('mensagem.html', '_blank')">
+      💌 Clique aqui para uma mensagem especial
+    </button>
+  </div>
+
+  <!-- SCRIPT DO SLIDESHOW -->
+  <script>
+    const slides = document.querySelectorAll('.slideshow img');
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
